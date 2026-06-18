@@ -27,3 +27,27 @@ mat1[c(1,3),c(1,3)] #here mat1[row part, col part]
 mat1[2,] #blank means all col
 mat[,2] #blank means all row
 
+mat2<-matrix(1:4,nrow=2)
+mat3<-matrix(5:8,nrow=2)
+
+sum_mat<-mat2+mat3
+sub_mat<-mat2-mat3
+mul1_mat<-mat2*mat3 #Element wise multiplication
+mul_mat<-mat2%*%mat3 #dot product
+div_mat<-mat2/mat3
+
+#Transpose of matrix : t()
+
+t_mat<-t(mat)
+
+#Inverse Matrix : solve()
+
+inv_mat2<-solve(mat2)
+
+#Array
+
+arr<-array(1:18,dim=c(3,3,2)) #here, dim=c(row_no,col_num,No_of_Matrix)
+
+
+
+
