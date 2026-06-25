@@ -48,6 +48,57 @@ inv_mat2<-solve(mat2)
 
 arr<-array(1:18,dim=c(3,3,2)) #here, dim=c(row_no,col_num,No_of_Matrix)
 
+arr1<-array(1:120,dim=c(3,4,10))
 
+#Extracting Values from matrix
+arr[,2,2]
+arr[,,2]
+arr[1,,]
 
+print(mean(arr))
+
+print(sum(arr[1,,1])) # for specific row/column sum
+
+#Apply function to each row(margin=1) and column(margin=2)
+apply(arr,MARGIN = 1,FUN=sum)
+
+# we can apply function in matrix
+mat<-matrix(1:9,3,3)
+apply(mat,2,sum)
+
+#Data Frames
+
+df<-data.frame(
+  ID=c(101,102,103,104),
+  Name=c("Afnan","Matthew","Elektra","Bob"),
+  Age=c(23,24,25,21),
+  Score=c(89.5,76.0,91.2,88.3),
+  Passed=c(TRUE,FALSE,TRUE,TRUE)
+)
+df$Name # for identifying specific, we use $
+
+mean(df$Age)
+var(df$Age) #variance
+sd(df$Age)#standard variance
+round(var(df$Age),1)
+
+table(df$Passed)
+
+plot(df$Age,df$Score)
+
+df[2,4]
+
+#alternative
+
+df[2,"Score"]
+df$Score[2]
+
+df[df$Score>80,]
+df[df$Score>80,c("Score","Age")]
+
+df[,4]=df[,4]+5
+df
+#Alternative
+df[df$Name=="Bob","Score"]<-81
+df
 
