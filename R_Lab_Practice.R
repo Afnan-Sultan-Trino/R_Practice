@@ -102,3 +102,13 @@ df
 df[df$Name=="Bob","Score"]<-81
 df
 
+df$Grade <-c("A","B","A+")
+
+#filter students
+passed_students <-df[]
+
+# Sorting by Age (Ascending)
+df_sorted <-df[order(df$Age),]
+
+#Sorting by Descending (giving - minus sign before )
+df_sorted_desc <- df[order(-df$Score),]
