@@ -76,6 +76,8 @@ df<-data.frame(
   Passed=c(TRUE,FALSE,TRUE,TRUE)
 )
 df$Name # for identifying specific, we use $
+df[2,]
+df[,2]
 
 mean(df$Age)
 var(df$Age) #variance
@@ -112,3 +114,98 @@ df_sorted <-df[order(df$Age),]
 
 #Sorting by Descending (giving - minus sign before )
 df_sorted_desc <- df[order(-df$Score),]
+
+
+
+titanic <- read.csv("titanic.csv")
+head(titanic)
+
+library(readr)
+titanic_7_ <- read_csv("titanic(7).csv")
+View(titanic_7_)
+
+#Missing Value
+colSums(is.na(titanic_7_))
+
+# Remove missing records
+titanic_clean <-na.omit(titanic_7_)
+
+#Imputation/Replace
+mean(titanic_7_$Age,na.rm = TRUE)
+
+#Duplicate
+sum(duplicated(titanic_7_))
+
+#if duplicated then distinct
+distinct
+
+#Unique/ unique character
+unique(titanic_7_$Survived)
+
+#Outlier Detection:
+
+#1. Boxplot for graphical-
+
+#2.IQR method-(Q3-Q1)
+
+Q1 <- quantile(titanic_7_$Fare,0.25) # 
+
+
+library(dplyr)
+
+
+#Data Transformation
+
+#1) Filtering (extraction)
+titanic_7_ %>%  
+  filter(Age>30) #row extract
+
+titanic_7_ %>%
+  select(Age,Name,Sex)# column extract
+
+titanic_7_ %>%
+  mutate(family_size=) # New Column add
+
+titanic_7_%>% 
+  arrange(desc(Fare))
+
+
+# Joins and Merge
+
+library(tidyverse)
+# Reshaping Data (Wide->Long)
+scores <-data.frame(
+  Student=c(
+    "Rahim",
+    "Karim"
+  ),
+  Quiz1=c(80,70),
+  Quiz2=c(85,75)
+)
+
+pivot_longer(
+  scores,
+  cols=c(
+    Quiz1,
+    Quiz2
+  ),
+  names_to ="Quiz",
+  values_to ="Marks"
+)
+
+#long to wider
+
+long_data <-pivot_longer(
+  scores,
+  cols=c(
+    Quiz1,
+    Quiz2
+  ),
+  names_to ="Quiz",
+  values_to ="Marks"
+)
+
+
+pivot_wider(long_data,names_from="Quiz",values_from="Marks")
+
+#Encoding Categorical Variables
