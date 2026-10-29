@@ -53,29 +53,29 @@ A **stratified 80/20 train-test split** was created using `caret::createDataPart
 ### Missing Values Analysis
 Missingness in `workclass` was not random. **51%** of individuals with missing employment data were either under 25 or over 65, indicating they were mostly students or retirees. 
 
-![Missing Values by Column](images/fig1.png)
+![Missing Values by Column](fig1.png)
 
 ### Outlier Detection
 `capital_gain` required capping due to extreme values and census top-coding. Age contained a few outliers but they were valid, real-world ages.
 
-![Age Distribution](images/fig2.png)
-![Capital Gain Distribution](images/fig3.png)
+![Age Distribution](fig2.png)
+![Capital Gain Distribution](fig3.png)
 
 ### Class Imbalance
 The original dataset was heavily skewed toward the `<=50K` income bracket.
 
-![Income Distribution](images/fig4.png)
+![Income Distribution](fig4.png)
 
 ### Statistical Comparisons
 *   **Working Hours:** A Welch Two Sample t-test revealed a statistically significant difference in working hours (p < 2.2e-16). High earners work on average **45.5 hours/week**, while lower earners work **38.8 hours/week**.
 *   **Age & Education:** High earners are older (mean 44.2 vs 36.8) and have more years of education (11.6 vs 9.6).
 
-![Working Hours by Income](images/fig5.png)
+![Working Hours by Income](fig5.png)
 
 ### Employment Categories
 Age spread varies significantly by work class. Self-employed individuals are the oldest (mean ~45-46), while private sector workers are the youngest of the large categories (mean ~37.1).
 
-![Age Spread Across Work Classes](images/fig6.png)
+![Age Spread Across Work Classes](fig6.png)
 
 ---
 
